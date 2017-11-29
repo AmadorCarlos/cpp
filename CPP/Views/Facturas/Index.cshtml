@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CPP.Models.Factura>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Medicos.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pacientes.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servicios.servicioId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.total)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Medicos.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pacientes.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servicios.servicioId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.total)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.facturaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.facturaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.facturaId })
+        </td>
+    </tr>
+}
+
+</table>

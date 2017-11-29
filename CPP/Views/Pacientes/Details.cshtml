@@ -1,0 +1,122 @@
+﻿@model CPP.Models.Paciente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Paciente</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamentos.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Departamentos.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EstadosCiviles.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EstadosCiviles.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Municipios.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Municipios.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OcupacionesPaciente.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OcupacionesPaciente.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sexo.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sexo.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TiposdeSangre.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TiposdeSangre.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.apellido)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.apellido)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fechaNac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fechaNac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cedula)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cedula)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.telefono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.telefono)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.domicilio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.domicilio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.observaciones)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.pacienteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

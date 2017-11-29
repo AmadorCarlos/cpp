@@ -1,0 +1,58 @@
+﻿@model CPP.Models.Factura
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Factura</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Medicos.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Medicos.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pacientes.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pacientes.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Servicios.servicioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Servicios.servicioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.total)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.total)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.facturaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,36 @@
+﻿@model CPP.Models.ApplicationRole
+
+
+@{
+    ViewBag.Title = "Eliminar";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<h3>Seguro de eliminar este registro?</h3>
+<div>
+
+    @Html.ValidationSummary(true, "", new { @Class = "text-danger" })
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Nombre del Rol
+        </dt>
+
+        <dd>
+            
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Regresar al listado", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,66 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList < CPP.Models.Servicio>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Create")
+    <div class="row">
+        <div class="input-group">
+            @using (Html.BeginForm("Index", "Servicio", FormMethod.Get, new { @class = "form-inline" }))
+            {
+                <div class="input-group">
+                    @Html.TextBox("search", ViewBag.CurrentSearch as string, new { @class = "form-control", placeholder = "Escriba su busqueda", aria_discribedy = "basic-addon2" })
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">Buscar</button>
+                    </span>
+                </div>
+            }
+        </div>
+
+</p>
+<table class="table table-hover">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.precio)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.descripcion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precio)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.servicioId }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.servicioId }) |
+                @Html.ActionLink("Borrar", "Delete", new { id = item.servicioId })
+            </td>
+        </tr>
+    }
+
+</table>

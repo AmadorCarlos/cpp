@@ -1,0 +1,105 @@
+﻿@model IEnumerable<CPP.Models.Paciente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Departamentos.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EstadosCiviles.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Municipios.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OcupacionesPaciente.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sexo.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TiposdeSangre.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaNac)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cedula)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.domicilio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.observaciones)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Departamentos.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EstadosCiviles.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Municipios.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OcupacionesPaciente.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sexo.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TiposdeSangre.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaNac)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cedula)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.domicilio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.observaciones)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.pacienteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.pacienteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.pacienteId })
+        </td>
+    </tr>
+}
+
+</table>

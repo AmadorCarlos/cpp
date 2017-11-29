@@ -1,0 +1,47 @@
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Security.Claims;
+using System.Threading.Tasks;
+using System.Web.Mvc;
+
+namespace CPP.Models
+{
+    public class ApplicationUser : IdentityUser
+    {
+        //public async Task<ClaimsIdentity> GenerateUserIdentityAsync (UserManager<ApplicationUser> manager)
+        //{
+        //    // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+        //    var userIdentity = await 
+        //        manager.CreateIdentityAsync(this, 
+        //        DefaultAuthenticationTypes.ApplicationCookie);
+        //    // Add custom user claims here
+        //    return userIdentity;
+        //}
+
+        public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
+        {
+            // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
+            var userIdentity = await manager.CreateIdentityAsync(this, DefaultAuthenticationTypes.ApplicationCookie);
+            // Add custom user claims here
+            return userIdentity;
+        }
+
+
+        [Display(Name = "Nombre")]
+        public string FirstName { get; set; }
+
+        [Display(Name = "Apellido")]
+        public string LastName { get; set; }
+
+        [Display(Name = "Nombre Completo")]
+        public string FullName
+        {
+            get { return FirstName + " " + LastName; }
+        }
+
+        //Relaciones
+        public IEnumerable<SelectListItem> RolesList { get; set; }
+    }
+}
